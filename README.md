@@ -41,11 +41,13 @@ class { 'tuned':
 
 Custom profile:
 
+```puppet
 tuned::profile { 'name':
   ensure  => present|absent, # ensure state
   data    => {...},          # hash of hashes for tuned.conf
   scripts => {...},          # hash of scripts content into profile dir.
 }
+```
 
 Example:
 
