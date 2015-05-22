@@ -49,6 +49,32 @@ tuned::profile { 'name':
 }
 ```
 
+Data hash format is following:
+
+```
+{
+  'section1' => {
+    'key1' => 'value1',
+    'key2' => 'value2'
+  },
+  'section2' => {
+    'key1' => 'value1',
+    'key2' => 'value2'
+  },
+  ...
+}
+```
+
+Scripts hash format is following:
+
+```
+{
+  'script_name1' => 'script content1',
+  'script_name2' => 'script content2',
+  ...
+}
+```
+
 Example:
 
 ```puppet
@@ -65,7 +91,7 @@ tuned::profile { 'virtual-host-cfq':
     'script' => { 'script'   => 'dummy.sh', }
   },
   scripts => {
-    'dummy.sh' => '#!/bin/bash\n/bin/true',
+    'dummy.sh' => "#!/bin/bash\n/bin/true",
   }
 }
 ```
@@ -76,13 +102,13 @@ tuned::profile { 'virtual-host-cfq':
 
 Tries to detect installed Tuned version. E.g.:
 
-```json
+```
 "2.4.1"
 ```
 
 or for versions 0.x
 
-```json
+```
 "unknown"
 ```
 
@@ -90,7 +116,7 @@ or for versions 0.x
 
 Returns current active profile. E.g.:
 
-```json
+```
 "virtual-host-cfq"
 ```
 
@@ -98,7 +124,7 @@ Returns current active profile. E.g.:
 
 Returns list of available profiles. E.g.:
 
-```json
+```
 ["balanced", "desktop", "latency-performance", "network-latency",
  "network-throughput", "powersave", "throughput-performance",
  "virtual-guest", "virtual-host"]
