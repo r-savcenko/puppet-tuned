@@ -24,7 +24,7 @@ include tuned
 Full configuration options:
 
 ```puppet
-class { 'opensm':
+class { 'tuned':
   enabled             => true|false,  # enable state
   profile             => '...',       # active profile
   dynamic_tuning      => true|false,  # enable dynamic tuning
