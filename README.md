@@ -87,12 +87,12 @@ tuned::profile { 'virtual-host-cfq':
   ensure  => present,
   data    => {
     'main'   => { 'include'  => 'virtual-host', },
-    'disk'   => { 'elevator' => 'cfq', }
-    'script' => { 'script'   => 'dummy.sh', }
+    'disk'   => { 'elevator' => 'cfq', },
+    'script' => { 'script'   => 'dummy.sh', },
   },
   scripts => {
     'dummy.sh' => "#!/bin/bash\n/bin/true",
-  }
+  },
 }
 ```
 
