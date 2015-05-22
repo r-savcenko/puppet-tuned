@@ -1,0 +1,3 @@
+class { 'tuned':
+  enabled => false,
+}

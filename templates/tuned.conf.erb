@@ -1,0 +1,10 @@
+#
+# tuned configuration managed by Puppet
+#
+<% @data.sort.map do |section,params| -%>
+
+[<%= section %>]
+<% params.sort.map do |k,v| -%>
+<%= k %>=<% if v.split(' ').length == 1 %><%= v %><% else %>"<%= v.gsub('"','\"') %>"<% end %>
+<% end -%>
+<% end -%>
