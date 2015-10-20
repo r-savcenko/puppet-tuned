@@ -9,5 +9,6 @@ class tuned::install (
 
   package { $packages:
     ensure => $_ensure,
+    notify => Class['tuned::service'],
   }
 }
