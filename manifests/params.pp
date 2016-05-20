@@ -21,7 +21,7 @@ class tuned::params {
 
     redhat,centos,scientific,oraclelinux: {
       case $::operatingsystemmajrelease {
-        6: {
+        '6': {
           $majversion = pick($_majversion, '0')
           $dynamic_tuning = false
           $main_conf = '' # unsupported
@@ -31,7 +31,7 @@ class tuned::params {
           $active_profile_conf = 'active-profile'
         }
 
-        7: {
+        '7': {
           $majversion = pick($_majversion, '2')
           $dynamic_tuning = false
           $main_conf = '/etc/tuned/tuned-main.conf'
