@@ -9,7 +9,7 @@ class tuned::params {
   }
 
   case $::operatingsystem {
-    fedora: {
+    'Fedora': {
       $majversion = pick($_majversion, '2')
       $dynamic_tuning = true
       $main_conf = '/etc/tuned/tuned-main.conf'
@@ -19,7 +19,7 @@ class tuned::params {
       $active_profile_conf = 'active_profile'
     }
 
-    redhat,centos,scientific,oraclelinux: {
+    'RedHat','CentOS','Scientific','OracleLinux': {
       case $::operatingsystemmajrelease {
         '6': {
           $majversion = pick($_majversion, '0')
