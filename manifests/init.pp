@@ -48,6 +48,9 @@ class tuned (
       -> Class['tuned::config']
       -> Class['tuned::service']
       -> anchor { 'tuned::end': ; }
+
+    Class['tuned::install']
+      ~> Class['tuned::service']
   } else {
     anchor { 'tuned::begin': ; }
       -> Class['tuned::service']
