@@ -11,7 +11,7 @@ class tuned::config (
   validate_absolute_path($_active_profile_fn)
 
   # if no profile specified, tuned will detect suitable
-  if $profile {
+  if ! empty($profile) {
     exec { 'tuned-adm_profile':
       command => shellquote('tuned-adm', 'profile', $profile),
       unless  => shellquote('grep', '-Fqx', $profile, $_active_profile_fn),
@@ -26,7 +26,7 @@ class tuned::config (
       notify  => Class['tuned::service'],
     }
 
-    if $profile {
+    if ! empty($profile) {
       Ini_setting {
         before => Exec['tuned-adm_profile'],
       }
