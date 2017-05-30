@@ -19,7 +19,7 @@ class tuned::config (
     }
   }
 
-  if $main_conf {
+  if ! empty($main_conf) {
     Ini_setting {
       path    => $main_conf,
       section => '',
