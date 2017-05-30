@@ -7,6 +7,13 @@
   "source": "https://github.com/CERIT-SC/puppet-tuned.git",
   "project_page": "https://github.com/CERIT-SC/puppet-tuned",
   "issues_url": "https://github.com/CERIT-SC/puppet-tuned/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.6.0"
+    }
+  ],
+  "data_provider": null,
   "tags": [
     "tuned"
   ],
@@ -42,8 +49,5 @@
     {
       "operatingsystem": "Fedora"
     }
-  ],
-  "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 4.6.0"}
   ]
 }
