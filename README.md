@@ -130,6 +130,11 @@ Returns list of available profiles. E.g.:
  "virtual-guest", "virtual-host"]
 ```
 
+# Contributors
+
+* Artem Zhurbila <artemzhurbilo@gmail.com>
+* Marcin Deranek <marcin.deranek@booking.com>
+
 ***
 
 CERIT Scientific Cloud, <support@cerit-sc.cz>
