@@ -53,7 +53,7 @@ Facter.add("tuned_profiles") do
     if out
       result = []
       out.each_line do |l|
-        if l =~ /^- ([^ \n]+)$/
+        if l =~ /^- ([^ \n]+)/
           result << $1
         end
       end
