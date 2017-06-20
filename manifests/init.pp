@@ -18,7 +18,7 @@ class tuned (
   validate_integer($sleep_interval, $update_interval)
   validate_absolute_path($profiles_path)
 
-  if $main_conf {
+  if !empty($main_conf) {
     validate_absolute_path($main_conf)
   }
 
