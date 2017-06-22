@@ -11,6 +11,10 @@
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 4.6.0"
+    },
+    {
+      "name": "puppetlabs/inifile",
+      "version_requirement": ">= 1.5.0"
     }
   ],
   "data_provider": null,
