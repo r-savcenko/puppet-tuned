@@ -11,7 +11,8 @@ Module has been tested on:
 
 Required modules:
 
-* stdlib (https://github.com/puppetlabs/puppetlabs-stdlib)
+* [stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
+* [puppetlabs-inifile](https://github.com/puppetlabs/puppetlabs-inifile)
 
 # Quick Start
 
