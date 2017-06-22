@@ -135,6 +135,7 @@ Returns list of available profiles. E.g.:
 
 * Artem Zhurbila <artemzhurbilo@gmail.com>
 * Marcin Deranek <marcin.deranek@booking.com>
+* Xavier Mol <xavier.mol@kit.edu>
 
 ***
 

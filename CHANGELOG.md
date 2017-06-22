@@ -1,3 +1,8 @@
+## 2017-06-22 - Release 0.9.2
+
+- Fix EL6 and Puppet4/5 $main_conf testing
+- Add missing dependency on puppetlabs-inifile
+
 ## 2017-05-30 - Release 0.9.1
 
 - Fixes for Puppet 4/5
