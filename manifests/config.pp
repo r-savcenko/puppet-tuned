@@ -4,11 +4,10 @@ class tuned::config (
   $sleep_interval,
   $update_interval,
   $main_conf,
-  $profiles_path,
+  Stdlib::Compat::Absolute_path $profiles_path,
   $active_profile_conf,
 ) {
   $_active_profile_fn = "${profiles_path}/${active_profile_conf}"
-  validate_absolute_path($_active_profile_fn)
 
   # if no profile specified, tuned will detect suitable
   if ! empty($profile) {

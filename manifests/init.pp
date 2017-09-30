@@ -1,26 +1,16 @@
 class tuned (
-  $enabled             = $tuned::params::enabled,
-  $profile             = $tuned::params::profile,
-  $dynamic_tuning      = $tuned::params::dynamic_tuning,
-  $sleep_interval      = $tuned::params::sleep_interval,
-  $update_interval     = $tuned::params::update_interval,
-  $majversion          = $tuned::params::majversion,
-  $main_conf           = $tuned::params::main_conf,
-  $profiles_path       = $tuned::params::profiles_path,
-  $active_profile_conf = $tuned::params::active_profile_conf,
-  $packages            = $tuned::params::packages,
-  $services            = $tuned::params::services
+  Boolean $enabled                                               = $tuned::params::enabled,
+  String $profile                                                = $tuned::params::profile,
+  Boolean $dynamic_tuning                                        = $tuned::params::dynamic_tuning,
+  Integer $sleep_interval                                        = $tuned::params::sleep_interval,
+  Integer $update_interval                                       = $tuned::params::update_interval,
+  String $majversion                                             = $tuned::params::majversion,
+  Variant[Stdlib::Compat::Absolute_path, String[0,0]] $main_conf = $tuned::params::main_conf,
+  Stdlib::Compat::Absolute_path $profiles_path                   = $tuned::params::profiles_path,
+  String $active_profile_conf                                    = $tuned::params::active_profile_conf,
+  Array $packages                                                = $tuned::params::packages,
+  Array $services                                                = $tuned::params::services
 ) inherits tuned::params {
-
-  validate_bool($enabled, $dynamic_tuning)
-  validate_array($packages, $services)
-  validate_string($profile, $active_profile_conf)
-  validate_integer($sleep_interval, $update_interval)
-  validate_absolute_path($profiles_path)
-
-  if !empty($main_conf) {
-    validate_absolute_path($main_conf)
-  }
 
   class { 'tuned::install':
     enabled  => $enabled,
