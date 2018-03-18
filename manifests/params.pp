@@ -6,6 +6,8 @@ class tuned::params {
 
   if $::tuned_version and $::tuned_version =~ /^(\d+)\.[\d\.]+$/ {
     $_majversion = $1
+  } else {
+    $_majversion = undef
   }
 
   case $::operatingsystem {
