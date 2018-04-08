@@ -4,32 +4,32 @@
 #
 # Purpose: Various tuned facts
 #
-Facter.add("tuned_version") do
+Facter.add('tuned_version') do
   confine :kernel => :linux
   setcode do
     out = Facter::Core::Execution.exec('tuned --version 2>&1')
-    if out and out =~ /^tuned ([\d\.]+)$/i
-      $1
-    elsif Facter::Core::Execution.exec('which tuned 2>/dev/null')
+    if out && out =~ %r{^tuned ([\d\.]+)$}i
+      Regexp.last_match(1)
+    elsif !Facter::Core::Execution.exec('which tuned 2>/dev/null').empty?
       'unknown'
     end
   end
 end
 
-Facter.add("tuned_profile") do
+Facter.add('tuned_profile') do
   confine :kernel => :linux
   setcode do
     result = nil
 
     out = Facter::Core::Execution.exec('tuned-adm active 2>/dev/null')
-    if out and out =~ /^Current active profile: (.*)$/
-      result = $1
+    if out && out =~ %r{^Current active profile: (.*)$}
+      result = Regexp.last_match(1)
     end
 
     if result.nil?
       alternatives = [
-       '/etc/tuned/active_profile',
-       '/etc/tune-profiles/active-profile'
+        '/etc/tuned/active_profile',
+        '/etc/tune-profiles/active-profile',
       ]
 
       alternatives.each do |fn|
@@ -44,7 +44,7 @@ Facter.add("tuned_profile") do
   end
 end
 
-Facter.add("tuned_profiles") do
+Facter.add('tuned_profiles') do
   confine :kernel => :linux
   setcode do
     result = nil
@@ -53,8 +53,8 @@ Facter.add("tuned_profiles") do
     if out
       result = []
       out.each_line do |l|
-        if l =~ /^- ([^ \n]+)/
-          result << $1
+        if l =~ %r{^- ([^ \n]+)}
+          result << Regexp.last_match(1)
         end
       end
     end
