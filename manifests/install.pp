@@ -1,13 +1,10 @@
-class tuned::install (
-  $enabled,
-  $packages
-) {
-  $_ensure = $enabled ? {
+class tuned::install {
+  $_ensure = $tuned::enabled ? {
     true  => present,
     false => absent
   }
 
-  package { $packages:
+  package { $tuned::packages:
     ensure => $_ensure,
   }
 }

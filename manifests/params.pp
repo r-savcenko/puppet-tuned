@@ -4,13 +4,13 @@ class tuned::params {
   $sleep_interval = 1
   $update_interval = 10
 
-  if $::tuned_version and $::tuned_version =~ /^(\d+)\.[\d\.]+$/ {
+  if length($facts['tuned_version'])>0 and $facts['tuned_version'] =~ /^(\d+)\.[\d\.]+$/ {
     $_majversion = $1
   } else {
     $_majversion = undef
   }
 
-  case $::operatingsystem {
+  case $facts['os']['name'] {
     'Fedora': {
       $majversion = pick($_majversion, '2')
       $dynamic_tuning = true
@@ -22,7 +22,7 @@ class tuned::params {
     }
 
     'RedHat','CentOS','Scientific','OracleLinux': {
-      case $::operatingsystemmajrelease {
+      case $facts['os']['release']['major'] {
         '6': {
           $majversion = pick($_majversion, '0')
           $dynamic_tuning = false
@@ -45,13 +45,13 @@ class tuned::params {
 
         default: {
           fail("Unsupported OS release: \
-${::operatingsystem} ${::operatingsystemmajrelease}")
+${facts['os']['name']} ${facts['os']['release']['major']}")
         }
       }
     }
 
     default: {
-      fail("Unsupported OS: ${::operatingsystem}")
+      fail("Unsupported OS: ${facts['os']['name']}")
     }
   }
 }

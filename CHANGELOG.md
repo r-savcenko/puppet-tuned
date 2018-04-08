@@ -1,3 +1,5 @@
+- Modernize for Puppet 4/5
+
 ## 2017-06-22 - Release 0.9.2
 
 - Fix EL6 and Puppet4/5 $main_conf testing

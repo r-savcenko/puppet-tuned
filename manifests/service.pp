@@ -1,14 +1,11 @@
-class tuned::service (
-  $enabled,
-  $services
-) {
-  $_ensure = $enabled ? {
+class tuned::service {
+  $_ensure = $tuned::enabled ? {
     true  => running,
     false => stopped,
   }
 
-  service { $services:
+  service { $tuned::services:
     ensure => $_ensure,
-    enable => $enabled,
+    enable => $tuned::enabled,
   }
 }

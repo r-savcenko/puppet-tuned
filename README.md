@@ -6,12 +6,12 @@ This module installs, configures and starts Tuned.
 
 Module has been tested on:
 
-* Puppet 3.7
+* Puppet 5.5
 * RHEL/CentOS 6, 7
 
 Required modules:
 
-* [stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
+* [puppetlabs-stdlib](https://github.com/puppetlabs/puppetlabs-stdlib)
 * [puppetlabs-inifile](https://github.com/puppetlabs/puppetlabs-inifile)
 
 # Quick Start
@@ -99,7 +99,7 @@ tuned::profile { 'virtual-host-cfq':
 
 # Facts
 
-### $::tuned\_version
+### tuned\_version
 
 Tries to detect installed Tuned version. E.g.:
 
@@ -113,7 +113,7 @@ or for versions 0.x
 "unknown"
 ```
 
-### $::tuned\_profile
+### tuned\_profile
 
 Returns current active profile. E.g.:
 
@@ -121,7 +121,7 @@ Returns current active profile. E.g.:
 "virtual-host-cfq"
 ```
 
-### $::tuned\_profiles
+### tuned\_profiles
 
 Returns list of available profiles. E.g.:
 
@@ -136,6 +136,7 @@ Returns list of available profiles. E.g.:
 * Artem Zhurbila <artemzhurbilo@gmail.com>
 * Marcin Deranek <marcin.deranek@booking.com>
 * Xavier Mol <xavier.mol@kit.edu>
+* Peter Meier <mh@immerda.ch>
 
 ***
 

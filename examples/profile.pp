@@ -40,11 +40,11 @@ $scripts = {
 
 ###
 
-class { 'tuned':
-  profile => 'smoke-test',
-}
-
 tuned::profile { 'smoke-test':
   data    => $data,
   scripts => $scripts,
+}
+
+class { 'tuned':
+  profile => 'smoke-test',
 }
