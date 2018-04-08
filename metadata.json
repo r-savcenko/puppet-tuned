@@ -17,10 +17,6 @@
       "version_requirement": ">= 1.5.0"
     }
   ],
-  "data_provider": null,
-  "tags": [
-    "tuned"
-  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
@@ -53,5 +49,17 @@
     {
       "operatingsystem": "Fedora"
     }
-  ]
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">= 4.7.0 < 6.0.0"
+    }
+  ],
+  "tags": [
+    "tuned"
+  ],
+  "pdk-version": "1.4.1",
+  "template-url": "file:///opt/puppetlabs/pdk/share/cache/pdk-templates.git",
+  "template-ref": "1.4.1-0-g52adbbb"
 }
