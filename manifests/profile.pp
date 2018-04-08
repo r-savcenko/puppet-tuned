@@ -30,7 +30,7 @@ define tuned::profile (
 
       file { "${_profile_dir}/tuned.conf":
         ensure  => file,
-        content => template("${module_name}/tuned.conf.erb"),
+        content => epp("${module_name}/tuned.conf.epp", { 'data' => $data }),
         before  => Class['tuned::config'],
       }
 

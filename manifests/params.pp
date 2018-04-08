@@ -4,7 +4,7 @@ class tuned::params {
   $sleep_interval = 1
   $update_interval = 10
 
-  if length($facts['tuned_version'])>0 and $facts['tuned_version'] =~ /^(\d+)\.[\d\.]+$/ {
+  if has_key($facts, 'tuned_version') and $facts['tuned_version'] =~ /^(\d+)\.[\d\.]+$/ {
     $_majversion = $1
   } else {
     $_majversion = undef
