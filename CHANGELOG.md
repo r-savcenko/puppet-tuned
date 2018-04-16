@@ -1,3 +1,7 @@
+## 2018-04-16 - Release 1.0.1
+
+- Fix file permissions in the module
+
 ## 2018-04-16 - Release 1.0.0
 
 - Modernize for Puppet 4/5
