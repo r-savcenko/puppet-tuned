@@ -1,4 +1,7 @@
+## 2018-04-16 - Release 1.0.0
+
 - Modernize for Puppet 4/5
+- Convert to PDK module
 
 ## 2017-06-22 - Release 0.9.2
 
