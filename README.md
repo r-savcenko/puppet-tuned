@@ -80,7 +80,7 @@ Example:
 
 ```puppet
 class { 'tuned':
-  profile        => 'virtual-host-cfg',
+  profile        => 'virtual-host-cfq',
   dynamic_tuning => false,
 }
 
