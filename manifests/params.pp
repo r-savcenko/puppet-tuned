@@ -33,7 +33,7 @@ class tuned::params {
           $active_profile_conf = 'active-profile'
         }
 
-        '7': {
+        /7|8/: {
           $majversion = pick($_majversion, '2')
           $dynamic_tuning = false
           $main_conf = '/etc/tuned/tuned-main.conf'
