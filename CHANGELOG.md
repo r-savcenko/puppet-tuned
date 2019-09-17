@@ -1,3 +1,7 @@
+## 2019-09-17 - Release 1.0.2
+
+- Add support for RHEL 8
+
 ## 2018-04-16 - Release 1.0.1
 
 - Fix file permissions in the module
