@@ -4,7 +4,7 @@ define tuned::profile::script (
   Hash[String, String] $scripts,
   Pattern[/^[\w\-\.]+$/] $script_name = $title,
 ) {
-  unless has_key($scripts, $script_name) {
+  unless ($script_name in $scripts) {
     fail("Missing content for script ${script_name}")
   }
 
